@@ -12,7 +12,7 @@ change_dir = input("Is the file you are looking for is in this directory? (yes/n
 
 while True:
     if change_dir == "yes":
-        lst = os.listdir(directory)
+        lst = os.listdir(cwd)
         print(f"the total number of files and directories under {cwd} is {len(lst)}.")
         break
     elif change_dir == "no":
@@ -21,6 +21,8 @@ while True:
         os.chdir('cd ubuntu')
         user_input_file = input("Enter the file/dir path you wish to get the count of: ")
         os.chdir(user_input_file)
+        lst = os.listdir(user_input_file)
+        print(f"the total number of files and directories under {cwd} is {len(lst)}.")
         break
 
     else:
